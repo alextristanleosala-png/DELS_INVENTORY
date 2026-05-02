@@ -4,7 +4,7 @@
 
 #define MAX 100
 
-// ================= STRUCTURES =================
+// STRUCTURES
 
 // Product (Array)
 typedef struct {
@@ -34,7 +34,7 @@ typedef struct Stack {
 
 Stack* top = NULL;
 
-// ================= STACK FUNCTIONS =================
+// STACK FUNCTIONS 
 void push(Product p, int actionType) {
     Stack* temp = (Stack*)malloc(sizeof(Stack));
     temp->data = p;
@@ -51,7 +51,7 @@ Stack* pop() {
     return temp;
 }
 
-// ================= LINKED LIST FUNCTIONS =================
+// LINKED LIST FUNCTIONS
 void addHistory(char action[]) {
     Node* temp = (Node*)malloc(sizeof(Node));
     strcpy(temp->action, action);
@@ -68,7 +68,7 @@ void showHistory() {
     }
 }
 
-// ================= SEARCH (LINEAR SEARCH) =================
+//  SEARCH (LINEAR SEARCH)
 int searchProduct(int id) {
     for (int i = 0; i < count; i++) {
         if (inventory[i].id == id)
@@ -77,7 +77,7 @@ int searchProduct(int id) {
     return -1;
 }
 
-// ================= SORT (BUBBLE SORT) =================
+//  SORT (BUBBLE SORT) 
 void sortInventory() {
     for (int i = 0; i < count - 1; i++) {
         for (int j = 0; j < count - i - 1; j++) {
@@ -91,7 +91,7 @@ void sortInventory() {
     printf("\nInventory sorted by quantity.\n");
 }
 
-// ================= CORE FUNCTIONS =================
+//CORE FUNCTIONS
 void addProduct() {
     if (count >= MAX) {
         printf("Inventory full!\n");
@@ -213,7 +213,7 @@ void undo() {
     printf("Undo successful!\n");
 }
 
-// ================= MAIN MENU =================
+//  MAIN MENU
 int main() {
     int choice;
 
